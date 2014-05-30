@@ -15,7 +15,7 @@ paramour.o: paramour.c
 libparamour.so: paramour.o
 	$(CC) -shared $(CFLAGS) -o $@ $<
 
-main: main.c fcts.h
+main: main.c fcts.h libsignificantOther.so
 	$(CC) -o $@ $< $(CFLAGS) libsignificantOther.so -ldl
 
 .PHONY: clean
