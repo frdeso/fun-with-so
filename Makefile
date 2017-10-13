@@ -1,22 +1,22 @@
 CC = gcc
 CFLAGS = -Wall -g
-all: libsignificantOther.so libparamour.so main
+all: libaaa.so libbbb.so main
 
 
-significantOther.o: significantOther.c
+aaa.o: aaa.c
 	$(CC) $(CFLAGS) -fPIC -c -o $@ $<
 
-libsignificantOther.so: significantOther.o
+libaaa.so: aaa.o
 	$(CC) -shared $(CFLAGS) -Wl,-soname,libsignificantOther.so -o $@ $<
 
-paramour.o: paramour.c
+bbb.o: bbb.c
 	$(CC) $(CFLAGS) -fPIC -c -o $@ $<
 
-libparamour.so: paramour.o
+libbbb.so: bbb.o
 	$(CC) -shared $(CFLAGS) -o $@ $<
 
-main: main.c fcts.h libsignificantOther.so
-	$(CC) -o $@ $< $(CFLAGS) libsignificantOther.so -ldl
+main: main.c fcts.h libaaa.so
+	$(CC) -o $@ $< $(CFLAGS) libaaa.so -ldl
 
 .PHONY: clean
 clean:

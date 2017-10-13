@@ -1,5 +1,5 @@
-#ifndef _FCTS_H_ 
+#ifndef _FCTS_H_
 #define _FCTS_H_
 
-int Answer2Everything();
+int answer_to_everything();
 #endif //_FCTS_H_
